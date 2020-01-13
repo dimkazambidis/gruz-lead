@@ -1,0 +1,212 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+/*===============  Base  ===============*/
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: $color-placeholder
+	opacity: 1
+
+*:-moz-placeholder
+	color: $color-placeholder
+	opacity: 1
+
+*::-moz-placeholder
+	color: $color-placeholder
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: $color-placeholder
+	opacity: 1
+
+html
+	font-size: $fz-base + px
+	line-height: $lh-base
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: $color-danger
+body input:required:valid,
+body textarea:required:valid
+	color: $color-success
+
+body
+	min-width: 320px
+	position: relative
+	font-family: $font-default
+	overflow-x: hidden
+	color: $color-text
+	font-size: $fz-base + px
+	line-height: $lh-base
+
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	margin-bottom: 0
+	color: $color-title
+
+h1
+	+fz(64)
+	line-height: 1
+
+h2
+	+fz(36)
+	line-height: 1.1
+	&.title-section
+		position: relative
+		padding-left: 32px
+		&::before
+			content: ""
+			display: block
+			position: absolute
+			top: 2px
+			left: 0
+			width: 4px
+			height: 34px
+			background-color: $color-accent
+		&.title-section_center
+			text-align: center
+			padding-left: 0
+			&::before
+				content: none
+			&::after
+				content: ""
+				display: block
+				position: relative
+				margin-top: 15px
+				margin-left: auto
+				margin-right: auto
+				width: 34px
+				height: 4px
+				background-color: $color-accent
+
+h3
+	+fz(22)
+	line-height: 1.3
+
+h4
+	+fz(18)
+
+h5
+	+fz(16)
+
+h6
+	+fz(14)
+
+p
+	margin-bottom: 1.5em
+
+ul
+	margin-bottom: 1.5em
+	padding-left: 1em
+	list-style: none
+	li
+		position: relative
+		&::before
+			content: "•"
+			display: inline-block
+			position: absolute
+			color: inherit
+			left: -1em
+			font-weight: 700
+	&.unstyled
+		margin: 0
+		padding: 0
+		li
+			&::before
+				content: none
+
+a
+	color: $color-base
+	transition: color 0.3s ease
+
+	&:hover
+		color: $color-title
+		text-decoration: none
+
+a.btn,
+input[type="submit"],
+input[type="button"],
+button
+	display: inline-block
+	height: 54px
+	line-height: 54px
+	border: 2px solid $color-accent
+	background-color: $color-accent
+	color: $color-title
+	padding-left: 50px
+	padding-right: 50px
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: 0.02em
+	text-align: center
+	transition: border-color 0.3s, background-color 0.3s, color 0.3s
+	cursor: pointer
+	&:hover
+		text-decoration: none
+		background-color: $color-base
+		color: #fff
+		border-color: $color-base
+	&:focus
+		outline: none
+
+input[type="text"],
+input[type="tel"],
+input[type="email"]
+	width: 100%
+	display: block
+	padding-left: 17px
+	padding-right: 17px
+	height: 54px
+	background-color: #f1f4fc
+	border: none
+	&:focus
+		outline: none
+
+textarea
+	width: 100%
+	display: block
+	padding: 15px 17px
+	background-color: #f1f4fc
+	border: none
+	&:focus
+		outline: none
+
+.input-container
+	margin-bottom: 15px
+	label
+		color: $color-placeholder
+		margin-bottom: 2px
+		+fz(12)
+		line-height: 2
+
+.site
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+	overflow: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+@import "header"
+@import "layout"
+@import "footer"
+@import "animate"
+@import "media"
+
+body
+	opacity: 1
+	transition: opacity 0.4s
+	transition-delay: 0.2s

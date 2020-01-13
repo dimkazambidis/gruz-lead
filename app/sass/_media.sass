@@ -1,0 +1,363 @@
+/*==============  Media  ==============*/
+
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : map-get($grid-breakpoints, xl) - 1px)
+	/**/
+	.hidden-lg
+		display: none
+
+	body
+		+fz(14)
+
+	h1
+		+fz(42)
+		line-height: 1.1
+
+	h2
+		+fz(28)
+		&.title-section
+			padding-left: 24px
+			&::before
+				top: 3px
+				width: 3px
+				height: 24px
+			&.title-section_center
+				&::after
+					margin-top: 12px
+					width: 24px
+					height: 3px
+
+	h3
+		+fz(18)
+
+	a.btn,
+	input[type="submit"],
+	input[type="button"],
+	button
+		height: 46px
+		line-height: 46px
+		padding-left: 15px
+		padding-right: 15px
+		+fz(13)
+
+	input[type="text"],
+	input[type="tel"],
+	input[type="email"]
+		height: 46px
+
+	.site-header-info
+		+fz(12)
+		padding-top: 12px
+		padding-bottom: 12px
+
+	.site-header-logo
+		img
+			height: 24px
+
+	.site-header-contacts,
+	.site-header-call
+		a
+			margin-left: 6px
+
+	.main-banner
+		padding-top: 120px
+		padding-bottom: 156px
+
+	.main-banner-content
+		padding-left: 60px
+		&::before
+			width: 4px
+			height: 40px
+
+	.main-banner-desc
+		+fz(18)
+		margin-bottom: 25px
+
+	.page-nav-item
+		a
+			padding-top: 35px
+			padding-bottom: 35px
+			+fz(16)
+			i
+				+fz(46)
+				margin-bottom: 10px
+
+	.welcome
+		padding-top: 45px
+		padding-bottom: 45px
+		p
+			padding-left: 24px
+
+	.services
+		padding-top: 45px
+		padding-bottom: 45px
+
+	.services-item
+		padding-top: 25px
+		>div
+			>div
+				&:first-child
+					width: 148px
+
+	.request
+		padding-top: 45px
+		padding-bottom: 45px
+
+	.request-submit
+		padding-top: 17px
+
+	.features
+		padding-top: 45px
+		padding-bottom: 45px
+
+	.features-item
+		padding-top: 25px
+		h3
+			margin-bottom: 10px
+			margin-left: auto
+			margin-right: auto
+			max-width: 280px
+		p
+			margin-bottom: 0
+			margin-left: auto
+			margin-right: auto
+			+fz(14)
+			max-width: 280px
+			br
+				display: none
+
+	.features-ico
+		+fz(52)
+		margin-bottom: 20px
+
+	.steps
+		padding-top: 45px
+		padding-bottom: 45px
+
+	.steps-list
+		margin-left: 140px
+		margin-right: 140px
+
+	.steps-item
+		width: 46px
+		height: 46px
+		margin-top: -23px
+		margin-left: -23px
+		&:nth-child(2n + 1)
+			.steps-item-content
+				bottom: 78px
+		&:nth-child(2n)
+			.steps-item-content
+				top: 78px
+
+	.steps-item-num
+		width: 46px
+		height: 46px
+		line-height: 46px
+		+fz(24)
+
+	.steps-item-content
+		margin-left: -140px
+		>div
+			width: 280px
+			height: 140px
+		h3
+			+fz(16)
+			margin-bottom: 10px
+			br
+				display: none
+		p
+			br
+				display: none
+
+	.cities
+		padding-top: 45px
+		padding-bottom: 45px
+		h2
+			margin-bottom: 24px
+
+	.cities-item
+		padding-left: 24px
+		&:before
+			top: 10px
+
+	.site-footer
+		padding-top: 25px
+
+	.site-footer-content
+		padding-bottom: 25px
+		+fz(12)
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : map-get($grid-breakpoints, lg) - 1px)
+	/**/
+	.hidden-md
+		display: none
+
+	.services-item
+		>div
+			>div
+				&:first-child
+					width: 124px
+
+	.steps-list
+		margin-left: 120px
+		margin-right: 120px
+
+	.steps-item-content
+		margin-left: -120px
+		>div
+			width: 240px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : map-get($grid-breakpoints, md) - 1px)
+	/**/
+	.hidden-sm
+		display: none
+
+	h1
+		+fz(38)
+
+	.site-header-desc
+		p
+			margin-bottom: 0
+			&::before
+				content: ""
+				position: relative
+				left: 0
+				width: 30px
+				height: 2px
+				margin-top: 10px
+				margin-bottom: 10px
+
+	.site-header-contacts,
+	.site-header-call
+		text-align: left
+		padding-top: 10px
+
+	.main-banner
+		padding-top: 90px
+		padding-bottom: 90px
+
+	.main-banner-content
+		padding-left: 0
+		&::before
+			position: relative
+			margin-left: 3px
+			margin-bottom: 24px
+
+	.page-nav
+		.container
+			max-width: 100%
+
+	.page-nav-item
+		border-left: none
+		border-right: none
+		border-bottom: 1px solid #6a77c8
+
+	.steps-list
+		padding-top: 0
+		padding-bottom: 0
+		margin-left: 0
+		margin-right: 0
+		&::before
+			content: none
+
+	.steps-item
+		position: relative
+		width: 100%
+		height: auto
+		max-width: 280px
+		padding-left: 0
+		top: 0
+		margin-top: 25px
+		margin-left: auto
+		margin-right: auto
+		&:nth-child(2n + 1)
+			.steps-item-content
+				top: auto
+				bottom: auto
+				&::before
+					content: none
+		&:nth-child(2n)
+			.steps-item-content
+				top: auto
+				bottom: auto
+				&::before
+					content: none
+		&:nth-child(2)
+			left: auto
+		&:nth-child(3)
+			left: auto
+		&:nth-child(4)
+			left: auto
+		&:nth-child(5)
+			left: auto
+
+	.steps-item-num
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -23px
+		z-index: 1
+
+	.steps-item-content
+		background-color: transparent
+		position: relative
+		left: auto
+		bottom: auto
+		margin-left: 0
+		padding-top: 46px
+		>div
+			width: 100%
+			height: 100%
+			>div
+				padding-bottom: 0
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : map-get($grid-breakpoints, sm) - 1px)
+	/**/
+	.hidden-xs
+		display: none
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : map-get($grid-breakpoints, sm))
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : map-get($grid-breakpoints, md))
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : map-get($grid-breakpoints, lg))
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : map-get($grid-breakpoints, xl))
+	/**/
+	.hidden-xl
+		display: none
+

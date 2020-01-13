@@ -1,0 +1,30 @@
+//===== Font family =====//
+$font-default: "Roboto", sans-serif //----- Base font
+
+//===== Colors =====//
+$color-base: #4555b9        //----- Base color
+$color-accent: #ffba00      //----- Accent color
+$color-placeholder: #737373 //----- Placeholders color
+$color-success: #23C253     //----- Success color
+$color-danger: #e02e4e      //----- Danger color
+$color-text: #737373        //----- Standart text color
+$color-title: #292929       //----- Standart text color
+$color-link: #456575        //----- Links color
+
+//===== Fonts sizes =====//
+$fz-base: 16       //----- Base font size (px)
+$lh-base: 1.3      //----- Base line height
+
+//===== Functions =====//
+=fz($fz)
+	font-size: $fz/$fz-base + rem
+
+=lh($lh)
+	line-height: $lh/$fz-base
+
+//===== Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss" =====//
+$grid-gutter-width: 32px //----- Gutters widths
+$grid-columns: 12        //----- Columns count
+
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 1024px, xl: 1200px)      //----- Breakpoints
+$container-max-widths: (sm: 576px, md: 768px, lg: 1024px, xl: 1170px)!default //----- Containers widths
