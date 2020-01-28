@@ -8,6 +8,29 @@
 .site-footer-content
 	padding-bottom: 50px
 
+.site-footer-nav
+	padding-top: 30px
+	nav
+		ul
+			li
+				display: inline-block
+				margin-left: 40px
+				// &::before
+				// 	content: "\f105"
+				// 	font-weight: 900
+				// 	font-family: 'Font Awesome 5 Free'
+				// 	display: inline-block
+				// 	position: relative
+				// 	left: 0
+				// 	padding-right: 8px
+				// 	color: #b8b8b8
+				&:first-child
+					margin-left: 0
+				a
+					color: $color-accent
+					&:hover
+						color: #fff
+
 .site-footer-copy
 	+fz(12)
 	color: #b8b8b8

@@ -49,14 +49,26 @@
 	input[type="email"]
 		height: 46px
 
-	.site-header-info
-		+fz(12)
+	.site-header
+		height: 42px
+
+	.site-header-top
 		padding-top: 12px
 		padding-bottom: 12px
+
+	.site-header-info
+		+fz(12)
+		padding-top: 40px
 
 	.site-header-logo
 		img
 			height: 24px
+
+	.site-header-nav
+		nav
+			ul
+				li
+					margin-left: 40px
 
 	.site-header-contacts,
 	.site-header-call
@@ -64,7 +76,7 @@
 			margin-left: 6px
 
 	.main-banner
-		padding-top: 120px
+		padding-top: 190px
 		padding-bottom: 156px
 
 	.main-banner-content
@@ -98,10 +110,18 @@
 
 	.services-item
 		padding-top: 25px
+		padding-bottom: 50px
 		>div
 			>div
 				&:first-child
-					width: 148px
+					width: 180px
+					height: 180px
+					margin-bottom: 20px
+
+	.service-item-price
+		padding-top: 10px
+		+fz(16)
+		margin-bottom: 20px
 
 	.request
 		padding-top: 45px
@@ -199,11 +219,11 @@
 	.hidden-md
 		display: none
 
-	.services-item
-		>div
-			>div
-				&:first-child
-					width: 124px
+	.site-header-nav
+		nav
+			ul
+				li
+					margin-left: 20px
 
 	.steps-list
 		margin-left: 120px
@@ -224,7 +244,16 @@
 	h1
 		+fz(38)
 
+	.site-header
+		height: 39px
+
+	.site-header-top
+		+fz(12)
+
 	.site-header-desc
+		>div
+			>div
+				padding-right: 60px
 		p
 			margin-bottom: 0
 			&::before
@@ -236,18 +265,57 @@
 				margin-top: 10px
 				margin-bottom: 10px
 
-	.site-header-contacts,
-	.site-header-call
-		text-align: left
-		padding-top: 10px
+	.site-header-nav
+		nav
+			text-align: left
+			display: none
+			width: auto
+			height: auto
+			position: absolute
+			top: 51px
+			left: 16px
+			right: 16px
+			background-color: #fff
+			border: 2px solid $color-base
+			opacity: 0
+			visibility: hidden
+			transform: translateY(20px)
+			transition: opacity 0.3s, visibility 0.3s, transform 0.3s
+			>div
+				display: block
+			ul
+				padding-top: 10px
+				padding-bottom: 10px
+				li
+					display: block
+					margin-left: 0
+					margin-bottom: 0
+					padding: 10px 20px
+					&:first-child
+						margin-left: 0
+					a
+						color: $color-base
+						+fz(18)
+		&.menu_on
+			nav
+				display: block
+		&.menu_visible
+			nav
+				opacity: 1
+				visibility: visible
+				transform: translateY(0)
+
+	.site-header-nav-btn
+		display: block
 
 	.main-banner
-		padding-top: 90px
+		padding-top: 197px
 		padding-bottom: 90px
 
 	.main-banner-content
 		padding-left: 0
 		&::before
+			content: none
 			position: relative
 			margin-left: 3px
 			margin-bottom: 24px
@@ -260,6 +328,12 @@
 		border-left: none
 		border-right: none
 		border-bottom: 1px solid #6a77c8
+
+	.services-item
+		padding-bottom: 0
+
+	.service-all
+		padding-top: 50px
 
 	.steps-list
 		padding-top: 0
@@ -319,6 +393,13 @@
 			height: 100%
 			>div
 				padding-bottom: 0
+
+	.site-footer
+		.site-header-contacts
+			padding-top: 20px
+
+	.site-footer-nav
+		display: none
 
 
 /* Extra Small Devices, Phones */

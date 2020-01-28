@@ -1,23 +1,26 @@
 /*==============  Header  ==============*/
 .site-header
-	// background-color: $color-base
-	// height: 3rem
-	// color: #fff
-	// text-align: center
-	// line-height: 3rem
-	// position: absolute
-	// top: 0
-	// left: 0
-	// width: 100%
-	box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15)
+	//box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15)
+	height: 50px
+	overflow: visible
 	z-index: 1
 
-.site-header-info
-	background-color: #272c4c
-	color: #fff
-	+fz(15)
+.site-header-top
 	padding-top: 15px
 	padding-bottom: 15px
+	background-color: #272c4c
+	color: #fff
+	a
+		color: #fff
+		text-decoration: none
+		&:hover
+			color: $color-accent
+
+.site-header-info
+	//background-color: #0e122f
+	color: #fff
+	+fz(15)
+	padding-top: 52px
 	a
 		color: #fff
 		text-decoration: none
@@ -52,9 +55,83 @@
 			width: 2px
 			background-color: $color-accent
 
+.site-header-nav
+	nav
+		text-align: right
+		display: table
+		width: 100%
+		height: 100%
+		>div
+			display: table-cell
+			vertical-align: middle
+		ul
+			li
+				display: inline-block
+				margin-left: 60px
+				margin-bottom: 0
+				text-transform: uppercase
+				font-weight: 700
+				&:first-child
+					margin-left: 0
+
+.site-header-nav-btn
+	display: none
+	position: relative
+	a
+		display: block
+		position: absolute
+		width: 40px
+		height: 40px
+		background-color: #fff
+		top: -8px
+		right: 0
+		//bottom: 0
+		// top: 31px
+		// left: 50%
+		// margin-left: -20px
+		span
+			display: block
+			position: absolute
+			top: 50%
+			left: 10px
+			right: 10px
+			height: 3px
+			margin-top: -1px
+			background-color: $color-base
+			transition: background-color 0s linear
+			transition-delay: 0.15s
+			&::before,
+			&::after
+				content: ""
+				display: block
+				position: absolute
+				left: 0
+				right: 0
+				height: 3px
+				background-color: $color-base
+				transition: top 0.15s linear 0.15s, transform 0.15s linear 0s
+			&::before
+				top: -7px
+			&::after
+				top: 7px
+
+.site-header-nav-btn
+	a
+		&.active
+			span
+				background-color: transparent
+				&::before,
+				&::after
+					top: 0
+					transition: top 0.15s linear 0s, transform 0.15s linear 0.15s
+				&::before
+					transform: rotate(45deg)
+				&::after
+					transform: rotate(-45deg)
+
 .site-header-contacts,
 .site-header-call
-	text-align: right
+	//text-align: right
 	a
 		display: inline-block
 		margin-left: 8px

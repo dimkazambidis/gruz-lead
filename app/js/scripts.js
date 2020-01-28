@@ -44,6 +44,46 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 		return parent;
 	}
 
+	//===== Mobile navigation =====//
+	//Function mobile menu In
+	function menuIn() {
+		var a = document.querySelector('.site-header-nav-btn a');
+		var n = document.querySelector('.site-header-nav');
+
+		a.classList.add('active');
+		n.classList.add('menu_on');
+		setTimeout (function() {
+			n.classList.add('menu_visible');
+		}, 50);
+	}
+
+	//Function mobile menu In
+	function menuOut() {
+		var a = document.querySelector('.site-header-nav-btn a');
+		var n = document.querySelector('.site-header-nav');
+
+		a.classList.remove('active');
+		n.classList.remove('menu_visible');
+		setTimeout (function() {
+			n.classList.remove('menu_on');
+		}, 300);
+	}
+
+	//Click to activator mobile menu
+	document.querySelectorAll('.site-header-nav-btn a').forEach( function(item, i, arr) {
+		item.addEventListener('click', function(e) {
+			e.preventDefault();
+
+			var n = closest(this, '.site-header-nav');
+
+			if ( n.classList.contains('menu_on') ) {
+				menuOut();
+			} else {
+				menuIn();
+			}
+		});
+	});
+
 	//===== Popup callback =====//
 	//Function popup In
 	function popupIn(el) {
@@ -143,6 +183,9 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 		});
 	});
 
+	//===== Input mask =====//
+	Inputmask({"mask": "+7 (999) 999-9999"}).mask(document.querySelectorAll('input[type="tel"]'));
+
 	//===== Click Esc =====//
 	document.addEventListener( 'keyup', function(e) {
 		var b = document.querySelector('body');
@@ -154,9 +197,38 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 		}
 	});
 
-	//===== Input mask =====//
-	Inputmask({"mask": "+7 (999) 999-9999"}).mask(document.querySelectorAll('input[type="tel"]'));
+	//===== Click out of element =====//
+	$(document).mouseup(function(e) {
+		if( closest(e.target, '.site-header-nav') ) {
+			return;
+		} else {
+			menuOut();
+		}
+	});
 
+	//===== Click Esc =====//
+	$(document).on('keyup', function(e) {
+		var b = document.querySelector('body');
+
+		if (e.keyCode == 27) {
+			menuOut();
+
+			if ( b.classList.contains('popup_on') ) {
+				popupOutAll(600);
+			}
+		}
+	});
+
+	//===== Window resize =====//
+	$(window).on('resize', function() {
+		if ( window.innerWidth >= 768 ) {
+			var m = document.querySelector('.site-header-nav');
+
+			if ( m.classList.contains('menu_on') ) {
+				menuOut();
+			}
+		}
+	});
 })()
 
 $(function() {
