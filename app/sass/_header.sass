@@ -66,13 +66,30 @@
 			vertical-align: middle
 		ul
 			li
+				position: relative
 				display: inline-block
 				margin-left: 60px
 				margin-bottom: 0
 				text-transform: uppercase
 				font-weight: 700
+				&::after
+					content: ""
+					display: block
+					position: absolute
+					left: 0
+					right: 0
+					bottom: -21px
+					height: 3px
+					background-color: transparent
+					transition: background-color 0.15s
 				&:first-child
 					margin-left: 0
+				&.current,
+				&:hover
+					a
+						color: $color-accent
+					&::after
+						background-color: $color-accent
 
 .site-header-nav-btn
 	display: none
@@ -85,10 +102,6 @@
 		background-color: #fff
 		top: -8px
 		right: 0
-		//bottom: 0
-		// top: 31px
-		// left: 50%
-		// margin-left: -20px
 		span
 			display: block
 			position: absolute
@@ -131,7 +144,6 @@
 
 .site-header-contacts,
 .site-header-call
-	//text-align: right
 	a
 		display: inline-block
 		margin-left: 8px

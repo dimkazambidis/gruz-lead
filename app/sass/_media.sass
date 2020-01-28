@@ -291,11 +291,21 @@
 					margin-left: 0
 					margin-bottom: 0
 					padding: 10px 20px
+					transition: background-color 0.15s
 					&:first-child
 						margin-left: 0
+					&::after
+						content: none
 					a
 						color: $color-base
 						+fz(18)
+					&.current
+						background-color: $color-base
+						a
+							color: #fff
+					&:hover
+						a
+							color: $color-base
 		&.menu_on
 			nav
 				display: block

@@ -23,143 +23,130 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 /*!
 * Main code
 */
-(function() {
-	'Use strict'
+$(function() {
+	//===== Mobile navigation =====//
+	//Function mobile menu In
+	function menuIn() {
+		var a = $('.site-header-nav-btn a');
+		var n = $('.site-header-nav');
 
-	//===== Function for search closest element =====//
-	function closest(el, selector) {
-		if (Element.prototype.closest) {
-			return el.closest(selector);
-		}
-
-		var parent = el;
-
-		while (parent) {
-			if (parent.matches(selector)) {
-				return parent;
-			}
-			parent = parent.parentElement;
-		}
-
-		return parent;
+		a.addClass('active');
+		n.addClass('menu_on');
+		setTimeout (function() {
+			n.addClass('menu_visible');
+		}, 50);
 	}
 
-	//===== Popup callback =====//
+	//Function mobile menu In
+	function menuOut() {
+		var a = $('.site-header-nav-btn a');
+		var n = $('.site-header-nav');
+
+		a.removeClass('active');
+		n.removeClass('menu_visible');
+		setTimeout (function() {
+			n.removeClass('menu_on');
+		}, 300);
+	}
+
+	//Click to activator mobile menu
+	$('.site-header-nav-btn a').on('click', function(e) {
+		e.preventDefault();
+
+		var n = $(this).closest('.site-header-nav');
+
+			if ( n.hasClass('menu_on') ) {
+				menuOut();
+			} else {
+				menuIn();
+			}
+	});
+
+	//===== Popup =====//
 	//Function popup In
 	function popupIn(el) {
-		var b = document.body;
-		var elem = document.querySelector(el);
-		var padL = window.innerWidth - b.clientWidth;
+		var b = $('body');
+		var elem = $(el);
+		var padL = window.innerWidth - document.body.clientWidth;
 
-		b.classList.add('popup_on');
-		b.setAttribute( 'style', 'margin-right: ' + padL + 'px' );
-		elem.classList.add('active');
+		b.addClass('popup_on');
+		b.attr( 'style', 'margin-right: ' + padL + 'px' );
+		elem.addClass('active');
 
 		setTimeout (function() {
-			elem.classList.add('visible');
+			elem.addClass('visible');
 		}, 50);
 	}
 
 	//Function popup Out
 	function popupOut(el, timeOut) {
-		var b = document.body;
-		var elem = document.querySelector(el);
+		var b = $('body');
+		var elem = $(el);
 
-		elem.classList.remove('visible');
+		elem.removeClass('visible');
 
 		setTimeout (function() {
-			b.classList.remove('popup_on');
-			b.setAttribute( 'style', '' );
+			b.removeClass('popup_on');
+			b.attr( 'style', '' );
 
-			document.querySelectorAll(el).forEach( function(item, i, arr) {
-				item.classList.remove('active');
-			});
+			elem.removeClass('active');
 		}, timeOut);
 	}
 
 	//Function popup Out for All
 	function popupOutAll(timeOut) {
-		var b = document.body;
+		var b = $('body');
 
-		document.querySelectorAll('.popup').forEach( function(item, i, arr) {
-			item.classList.remove('visible');
+		$('.popup').each( function(e) {
+			$(this).removeClass('visible');
 
 			setTimeout (function() {
-				item.classList.remove('active');
+				$(this).removeClass('active');
 			}, timeOut);
 		});
 
 		setTimeout (function() {
-			b.classList.remove('popup_on');
-			b.setAttribute( 'style', '' );
+			b.removeClass('popup_on');
+			b.attr( 'style', '' );
 		}, timeOut);
 	}
 
 	//Click to activator for popup
-	document.querySelectorAll('a[data-popup]').forEach( function(item, i, arr) {
-		item.addEventListener('click', function(e) {
-			e.preventDefault();
+	$('a[data-popup]').on('click', function(e) {
+		e.preventDefault();
 
-			var b = document.querySelector('body');
-			var t = this.getAttribute('href').replace('#', '');
+		var b = $('body');
+		var t = $(this).attr('href').replace('#', '');
 
-			if ( b.classList.contains('popup_on') ) {
-				popupOut('#' + t, 600);
-			} else {
-				popupIn('#' + t);
-			}
-		});
-	});
-
-	//Close popup (click to close button)
-	document.querySelectorAll('.popup-close').forEach( function(item, i, arr) {
-		item.addEventListener('click', function(e) {
-			e.preventDefault();
-
-			var p = closest(this, '.popup');
-			var t = p.id;
-
+		if ( b.hasClass('popup_on') ) {
 			popupOut('#' + t, 600);
-
-			if ( t === 'product-card' ) {
-				homeScroll.setPosition(0, 0);
-			}
-		});
-	});
-
-	//Close popup (click out of content)
-	document.querySelectorAll('.popup').forEach( function(item, i, arr) {
-		item.addEventListener('click', function(e) {
-
-			var p = closest(e.target, '.popup-content');
-			var t = this.id;
-
-			if ( p ) {
-				return;
-			} else {
-				popupOut('#' + t, 600);
-				e.stopPropagation();
-			}
-		});
-	});
-
-	//===== Click Esc =====//
-	document.addEventListener( 'keyup', function(e) {
-		var b = document.querySelector('body');
-
-		if (e.keyCode == 27) {
-			if ( b.classList.contains('popup_on') ) {
-				popupOutAll(600);
-			}
+		} else {
+			popupIn('#' + t);
 		}
 	});
 
-	//===== Input mask =====//
-	Inputmask({"mask": "+7 (999) 999-9999"}).mask(document.querySelectorAll('input[type="tel"]'));
+	//Close popup (click to close button)
+	$('.popup-close').on('click', function(e) {
+		e.preventDefault();
 
-})()
+		var p = $(this).closest('.popup');
+		var t = p.attr('id');
 
-$(function() {
+		popupOut('#' + t, 600);
+	});
+
+	//Close popup (click out of content)
+	$('.popup').on('mouseup', function(e) {
+		var t = $(this).attr('id');
+
+		if ( $(e.target).closest('.popup-content').length ) {
+			return;
+		} else {
+			popupOut('#' + t, 600);
+			e.stopPropagation();
+		}
+	});
+
 	//===== Scroll to Anchor =====//
 	$('a[data-anchor]').on('click',function(){
 		var thisId = $(this).attr('href');
@@ -168,5 +155,39 @@ $(function() {
 			scrollTop: elScroll
 		}, 600);
 		return false;
+	});
+
+	//===== Input mask =====//
+	$('input[type="tel"]').inputmask({"mask": "+7 (999) 999-9999"});
+
+	//===== Click Esc =====//
+	$(document).on('keyup', function(e) {
+		if (e.keyCode == 27) {
+			if ( $('.site-header-nav').hasClass('menu_on') ) {
+				menuOut();
+			}
+
+			if ( $('body').hasClass('popup_on') ) {
+				popupOutAll(600);
+			}
+		}
+	});
+
+	//===== Click out of element =====//
+	$(document).on('mouseup', function(e) {
+		if ( $(e.target).closest('.site-header-nav').length ) {
+			return;
+		} else {
+			menuOut();
+		}
+	});
+
+	//===== Window resize =====//
+	$(window).on('resize', function() {
+		if ( window.innerWidth >= 768 ) {
+			if ( $('.site-header-nav').hasClass('menu_on') ) {
+				menuOut();
+			}
+		}
 	});
 });

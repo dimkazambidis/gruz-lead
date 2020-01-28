@@ -9033,6 +9033,7 @@ textarea:focus {
 }
 
 .site-header-nav nav ul li {
+  position: relative;
   display: inline-block;
   margin-left: 60px;
   margin-bottom: 0;
@@ -9040,8 +9041,30 @@ textarea:focus {
   font-weight: 700;
 }
 
+.site-header-nav nav ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -21px;
+  height: 3px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.15s;
+  -o-transition: background-color 0.15s;
+  transition: background-color 0.15s;
+}
+
 .site-header-nav nav ul li:first-child {
   margin-left: 0;
+}
+
+.site-header-nav nav ul li.current a, .site-header-nav nav ul li:hover a {
+  color: #ffba00;
+}
+
+.site-header-nav nav ul li.current::after, .site-header-nav nav ul li:hover::after {
+  background-color: #ffba00;
 }
 
 .site-header-nav-btn {
@@ -10094,13 +10117,28 @@ body.popup_on .popup.visible .popup-inner {
     margin-left: 0;
     margin-bottom: 0;
     padding: 10px 20px;
+    -webkit-transition: background-color 0.15s;
+    -o-transition: background-color 0.15s;
+    transition: background-color 0.15s;
   }
   .site-header-nav nav ul li:first-child {
     margin-left: 0;
   }
+  .site-header-nav nav ul li::after {
+    content: none;
+  }
   .site-header-nav nav ul li a {
     color: #4555b9;
     font-size: 1.125rem;
+  }
+  .site-header-nav nav ul li.current {
+    background-color: #4555b9;
+  }
+  .site-header-nav nav ul li.current a {
+    color: #fff;
+  }
+  .site-header-nav nav ul li:hover a {
+    color: #4555b9;
   }
   .site-header-nav.menu_on nav {
     display: block;
