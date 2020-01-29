@@ -1,123 +1,131 @@
-@include('parts/header.html')
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="Description">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#333E88"><!--#16182A-->
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#333E88"><!--#16182A-->
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#333E88"><!--#16182A-->
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+</head>
+
+<body>
+	<div class="site">
+		<header class="site-header">
+			<div class="site-header-top">
+				<div class="container">
+					<div class="row">
+						<div class="col site-header-info-item site-header-contacts">
+							<div>
+								<div>
+									<i class="fas fa-phone-alt"></i> <a href="tel:88007004986" title="Позвонить нам">8 (800) 700-49-86</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto site-header-info-item site-header-call">
+							<div>
+								<div>
+									<i class="fas fa-headset"></i> <a href="#popup-call" title="Заказать звонок" data-popup="Заказать звонок (Шапка)">Заказать звонок</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="site-header-info site-header-info_all">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-auto order-2 order-md-1 site-header-info-item site-header-logo">
+							<div>
+								<div>
+									<a href="index.html"><img src="images/logo.svg" alt="Logotype"></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 order-3 order-md-2 site-header-info-item site-header-desc">
+							<div>
+								<div>
+									<p>Диспетчерская служба грузоперевозки<br> из Москвы во все города</p>
+								</div>
+							</div>
+						</div>
+						<div class="col order-1 order-md-3 site-header-nav">
+							<div class="site-header-nav-btn">
+								<a href="#"><span></span></a>
+							</div>
+							<nav>
+								<div>
+									<ul class="unstyled">
+										<li><a href="o-kompanii.html" title="О компании">О компании</a></li>
+										<li class="current"><a href="uslugi.html" title="Услуги">Услуги</a></li>
+										<li><a href="tseny.html" title="Цены">Цены</a></li>
+										<li><a href="kontakty.html" title="Контакты">Контакты</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
 		<div class="site-primary">
 			<main class="site-content">
-				<section class="main-banner">
+				<section class="main-banner main-banner_all">
 					<div class="main-banner-inner">
 						<div class="container">
 							<div class="main-banner-content">
-								<h1>Грузоперевозке в <strong>Москве</strong></h1>
-								<div class="main-banner-desc"><br>У нас выгодные цены на грузоперевозки</div>
-								<a href="#popup-calc" class="btn" title="Запросить расчёт стоимости"  data-popup="Расчёт стоимости (Баннер)">Запросить расчёт стоимости</a>
+								<h1><strong>Квартирный перезд</strong></h1>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<nav class="page-nav">
+				<section class="breadcrumbs">
 					<div class="container">
-						<div class="row">
-							<div class="col-md-4 page-nav-item">
-								<a href="#steps" title="Как мы работаем?" data-anchor>
-									<span>
-										<span>
-											<i class="far fa-question-circle"></i><br>
-											Как мы работаем?
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="col-md-4 page-nav-item">
-								<a href="#features" title="Преимущества" data-anchor>
-									<span>
-										<span>
-											<i class="fas fa-check-double"></i><br>
-											Преимущества
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="col-md-4 page-nav-item">
-								<a href="#request" title="Заявка на расчет" data-anchor>
-									<span>
-										<span>
-											<i class="fas fa-calculator"></i><br>
-											Заявка на расчет
-										</span>
-									</span>
-								</a>
-							</div>
-						</div>
+						<nav>
+							<ul class="unstyled">
+								<li><a href="index.html" title="Главная">Главная</a></li>
+								<li><span>Цены</span></li>
+							</ul>
+						</nav>
 					</div>
-				</nav>
+				</section>
 
-				<section class="welcome">
+				<section class="welcome" itemscope itemtype="http://schema.org/Product">
 					<div class="container">
-						<h2 class="title-section">Перевозки Москва - Россия</h2>
+						<h2 class="title-section" itemprop="name">Квартирный перезд</h2>
 						<div class="section-content-inner">
-							<p>Транспортно-экспедиционная компания «Logotype» обеспечивает грузоперевозки из Москвы в любые города России.</p>
-						</div>
-					</div>
-				</section>
-
-				<section class="services">
-					<div class="container">
-						<h2 class="title-section title-section_center">Наши услуги</h2>
-						<div class="row">
-							<div class="col-md-4 services-item">
-								<div>
-									<div>
-										<a href="usluga-single.html" title="Квартирный перезд">
-											<img src="images/service_1.png" alt="">
-										</a>
-									</div>
-									<div>
-										<h3><a href="usluga-single.html" title="Квартирный перезд">Квартирный перезд</a></h3>
-										<div class="services-item-price">От 800 руб.</div>
-									</div>
-									<div class="services-item-btn">
-										<a href="#popup-call" class="btn" title="Оставить заявку на квартирный перезд" data-popup="Заявка на квартирный перезд">Оставить заявку</a>
-									</div>
-								</div>
+							<div class="services-single-text" itemprop="description">
+								<p>Транспортно-экспедиционная компания «Logotype» обеспечивает грузоперевозки из Москвы в любые города России.</p>
 							</div>
+							<p itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<meta itemprop="price" content="800.00">
+								<meta itemprop="priceCurrency" content="RUB">
 
-							<div class="col-md-4 services-item">
-								<div>
-									<div>
-										<a href="usluga-single.html" title="Офисный перезд">
-											<img src="images/service_2.png" alt="">
-										</a>
-									</div>
-									<div>
-										<h3><a href="usluga-single.html" title="Офисный перезд">Офисный перезд</a></h3>
-										<div class="services-item-price">От 1200 руб.</div>
-									</div>
-									<div class="services-item-btn">
-										<a href="#popup-call" class="btn" title="Оставить заявку на офисный перезд" data-popup="Заявка на офисный перезд">Оставить заявку</a>
-									</div>
-								</div>
-							</div>
+								<span class="services-single-price">Цена: от 800 руб.</span>
 
-							<div class="col-md-4 services-item">
-								<div>
-									<div>
-										<a href="usluga-single.html" title="Перевозка мебели">
-											<img src="images/service_3.png" alt="">
-										</a>
-									</div>
-									<div>
-										<h3><a href="usluga-single.html" title="Перевозка мебели">Перевозка мебели</a></h3>
-										<div class="services-item-price">От 500 руб.</div>
-									</div>
-									<div class="services-item-btn">
-										<a href="#popup-call" class="btn" title="Оставить заявку на перевозку мебели" data-popup="Заявка на перевозку мебели">Оставить заявку</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="service-all">
-							<a href="uslugi.html" title="Все услуги"><i class="fas fa-arrow-right"></i> Все услуги</a>
+								<link itemprop="availability" href="http://schema.org/InStock">
+							</p>
 						</div>
 					</div>
 				</section>
@@ -151,7 +159,7 @@
 					</div>
 				</section>
 
-				<section id="features" class="features">
+				<section class="features section-gray">
 					<div class="container">
 						<h2 class="title-section title-section_center">Преимущества Logotype</h2>
 						<div class="row">
@@ -180,69 +188,6 @@
 					</div>
 				</section>
 
-				<section id="steps" class="steps">
-					<div class="container">
-						<h2 class="title-section title-section_center">Как мы работаем</h2>
-						<div class="steps-list">
-							<div class="steps-item">
-								<div class="steps-item-num">1</div>
-								<div class="steps-item-content">
-									<div>
-										<div>
-											<h3>Вы оставляете заявку</h3>
-											<p>С параметрами грузоперевозки.<br> В течении 5 минут Вам<br> перезванивает менеджер</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="steps-item">
-								<div class="steps-item-num">2</div>
-								<div class="steps-item-content">
-									<div>
-										<div>
-											<h3>С Вами связывается наш менеджер</h3>
-											<p>Озвучивает стоимость грузоперевозки, сщгласовывает с вами детали заказа</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="steps-item">
-								<div class="steps-item-num">3</div>
-								<div class="steps-item-content">
-									<div>
-										<div>
-											<h3>Заключаем договор</h3>
-											<p>Заключаем договор, оплата 50% от суммы заявки</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="steps-item">
-								<div class="steps-item-num">4</div>
-								<div class="steps-item-content">
-									<div>
-										<div>
-											<h3>Отправка груза</h3>
-											<p>Отправка груза по указанному маршруту со всеми необходимыми документами</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="steps-item">
-								<div class="steps-item-num">5</div>
-								<div class="steps-item-content">
-									<div>
-										<div>
-											<h3>Прибытие груза</h3>
-											<p>Обмен документами и актами выполненных работ</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
 				<section class="cities">
 					<div class="container">
 						<h2 class="title-section">Заголовок для сео-текста</h2>
@@ -256,7 +201,58 @@
 			</main>
 		</div>
 
-		@include('parts/footer.html')
+		<footer class="site-footer">
+	<div class="site-footer-content">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="col-md-auto site-header-info-item site-header-logo">
+							<div>
+								<div>
+									<img src="images/logo.svg" alt="Logotype">
+								</div>
+							</div>
+						</div>
+						<div class="col-md site-header-info-item site-header-desc">
+							<div>
+								<div>
+									<p>Диспетчерская служба грузоперевозки<br> из Москвы во все города</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 site-footer-nav">
+							<nav>
+								<ul class="unstyled">
+									<li><a href="o-kompanii.html" title="О компании">О компании</a></li>
+									<li><a href="uslugi.html" title="Услуги">Услуги</a></li>
+									<li><a href="tseny.html" title="Цены">Цены</a></li>
+									<li><a href="kontakty.html" title="Контакты">Контакты</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-auto site-header-contacts">
+					<div class="footer-contacts-item">
+						<i class="fas fa-phone-alt"></i> <a href="tel:88007004986" title="Позвонить нам">8 (800) 700-49-86</a>
+					</div>
+					<div class="footer-contacts-item">
+						<i class="fas fa-envelope"></i> <a href="mailto:gruz@logotype.ru" title="Написать нам">gruz@logotype.ru</a>
+					</div>
+					<div class="footer-contacts-item">
+						<i class="fas fa-headset"></i> <a href="#popup-call" title="Заказать звонок"  data-popup="Заказать звонок (Подвал)">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer-copy">
+		<div class="container">© 2018 Logotype. Все права защищены.</div>
+	</div>
+</footer>
 
 		<div id="popup-call" class="popup popup_inline">
 			<div class="popup-bg"></div>

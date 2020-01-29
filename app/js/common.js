@@ -96,6 +96,9 @@ $(function() {
 
 		var b = $('body');
 		var t = $(this).attr('href').replace('#', '');
+		var d = $(this).data('popup');
+
+		$('#' + t + ' input[type="hidden"]').val(d);
 
 		if ( b.hasClass('popup_on') ) {
 			popupOut('#' + t, 600);

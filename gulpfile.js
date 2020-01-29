@@ -37,7 +37,7 @@ gulp.task('js', function() {
 		'app/js/common.js'
 	])
 	.pipe(concat('scripts.js'))
-	//.pipe(uglify())
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.stream());
 });
@@ -52,7 +52,7 @@ gulp.task('sass', function() {
 	}).on('error', sass.logError))
 	//.pipe(rename({suffix: '.min'}))
 	.pipe(autoprefixer())
-	//.pipe(cleanCSS())
+	.pipe(cleanCSS())
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });

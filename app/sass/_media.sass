@@ -49,9 +49,6 @@
 	input[type="email"]
 		height: 46px
 
-	.site-header
-		height: 42px
-
 	.site-header-top
 		padding-top: 12px
 		padding-bottom: 12px
@@ -59,6 +56,9 @@
 	.site-header-info
 		+fz(12)
 		padding-top: 40px
+		&.site-header-info_all
+			padding-top: 20px
+			padding-bottom: 20px
 
 	.site-header-logo
 		img
@@ -78,6 +78,9 @@
 	.main-banner
 		padding-top: 190px
 		padding-bottom: 156px
+		&.main-banner_all
+			padding-top: 45px
+			padding-bottom: 45px
 
 	.main-banner-content
 		padding-left: 60px
@@ -101,8 +104,6 @@
 	.welcome
 		padding-top: 45px
 		padding-bottom: 45px
-		p
-			padding-left: 24px
 
 	.services
 		padding-top: 45px
@@ -110,18 +111,21 @@
 
 	.services-item
 		padding-top: 25px
-		padding-bottom: 50px
+		padding-bottom: 30px
 		>div
+			padding-bottom: 66px
 			>div
 				&:first-child
 					width: 180px
 					height: 180px
 					margin-bottom: 20px
 
-	.service-item-price
+	.services-item-price
 		padding-top: 10px
 		+fz(16)
-		margin-bottom: 20px
+
+	.service-all
+		padding-top: 25px
 
 	.request
 		padding-top: 45px
@@ -194,7 +198,8 @@
 			br
 				display: none
 
-	.cities
+	.cities,
+	.price
 		padding-top: 45px
 		padding-bottom: 45px
 		h2
@@ -204,6 +209,15 @@
 		padding-left: 24px
 		&:before
 			top: 10px
+
+	.price-ps
+		padding-top: 20px
+
+	.services-single-price
+		+fz(16)
+
+	.section-content-inner
+		padding-left: 24px
 
 	.site-footer
 		padding-top: 25px
@@ -243,9 +257,6 @@
 
 	h1
 		+fz(38)
-
-	.site-header
-		height: 39px
 
 	.site-header-top
 		+fz(12)
@@ -321,6 +332,16 @@
 	.main-banner
 		padding-top: 197px
 		padding-bottom: 90px
+		&.main-banner_all
+			padding-top: 45px
+			padding-bottom: 45px
+			.main-banner-content
+				padding-left: 36px
+				&::before
+					content: ""
+					position: absolute
+					margin-left: 3px
+					margin-bottom: 24px
 
 	.main-banner-content
 		padding-left: 0
@@ -329,6 +350,11 @@
 			position: relative
 			margin-left: 3px
 			margin-bottom: 24px
+
+	.breadcrumbs
+		nav
+			padding-top: 20px
+			padding-bottom: 20px
 
 	.page-nav
 		.container
